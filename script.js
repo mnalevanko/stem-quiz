@@ -73,6 +73,12 @@ async function loadQuestions() {
     throw new Error("Not enough questions available to build the quiz.");
   }
 
+  const invalid = questions.filter((q) => !isValidQuestion(q));
+  if (invalid.length > 0) {
+    const ids = invalid.map((q) => q.id ?? "unknown").join(", ");
+    throw new Error(`Malformed question(s) detected (id: ${ids}). Check questions.json.`);
+  }
+
   return questions;
 }
 
@@ -189,6 +195,23 @@ function shuffle(items) {
   }
 
   return items;
+}
+
+const VALID_CATEGORIES = new Set(["Science", "Technology", "Engineering", "Math"]);
+
+function isValidQuestion(q) {
+  return (
+    q !== null &&
+    typeof q === "object" &&
+    typeof q.question === "string" &&
+    q.question.trim().length > 0 &&
+    VALID_CATEGORIES.has(q.category) &&
+    Array.isArray(q.options) &&
+    q.options.length >= 2 &&
+    Number.isInteger(q.correct_answer_index) &&
+    q.correct_answer_index >= 0 &&
+    q.correct_answer_index < q.options.length
+  );
 }
 
 function prepareQuestion(question) {
