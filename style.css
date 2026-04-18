@@ -47,6 +47,7 @@ body::before {
 
 .page-shell {
   display: grid;
+  gap: 18px;
   min-height: 100vh;
   padding: 32px 18px;
   place-items: center;
@@ -62,6 +63,19 @@ body::before {
   backdrop-filter: blur(14px);
   overflow: hidden;
   position: relative;
+}
+
+.site-footer {
+  width: min(980px, 100%);
+  padding: 0 12px 12px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
 }
 
 .screen {
@@ -608,6 +622,10 @@ h1 {
 @media (max-width: 520px) {
   .page-shell {
     padding: 14px;
+  }
+
+  .site-footer {
+    padding: 0 6px 8px;
   }
 
   .hero,
