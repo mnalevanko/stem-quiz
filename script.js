@@ -1,4 +1,4 @@
-const QUIZ_LENGTH = 10;
+// DOM-facing code only. Pure functions (shuffle, isValidQuestion, etc.) live in lib.js.
 
 const screens = {
   landing: document.getElementById("landing-screen"),
@@ -19,6 +19,7 @@ const ui = {
   feedbackMessage: document.getElementById("feedback-message"),
   resultsScore: document.getElementById("results-score"),
   resultsMessage: document.getElementById("results-message"),
+  resultsHighScore: document.getElementById("results-high-score"),
 };
 
 const state = {
@@ -28,6 +29,8 @@ const state = {
   score: 0,
   hasAnswered: false,
 };
+
+const HIGH_SCORE_KEY = "stemQuizHighScore";
 
 ui.startButton.addEventListener("click", startQuiz);
 ui.nextButton.addEventListener("click", goToNextQuestion);
@@ -80,27 +83,6 @@ async function loadQuestions() {
   }
 
   return questions;
-}
-
-// Picks QUIZ_LENGTH questions with proportional representation from each category.
-function selectQuestions(bank) {
-  const byCategory = {};
-  for (const question of bank) {
-    (byCategory[question.category] ??= []).push(question);
-  }
-
-  const categories = Object.keys(byCategory);
-  const base = Math.floor(QUIZ_LENGTH / categories.length);
-  const remainder = QUIZ_LENGTH % categories.length;
-
-  const selected = [];
-  categories.forEach((category, index) => {
-    const count = base + (index < remainder ? 1 : 0);
-    const pool = shuffle([...byCategory[category]]);
-    selected.push(...pool.slice(0, count));
-  });
-
-  return shuffle(selected);
 }
 
 function renderQuestion() {
@@ -183,22 +165,25 @@ function renderResults() {
   showScreen("results");
   ui.resultsScore.textContent = `${state.score} / ${QUIZ_LENGTH}`;
   ui.resultsMessage.textContent = getResultsMessage(state.score);
-}
 
-function getResultsMessage(finalScore) {
-  if (finalScore === QUIZ_LENGTH) {
-    return "Perfect score. Your STEM fundamentals are in excellent shape.";
+  const stored = parseInt(localStorage.getItem(HIGH_SCORE_KEY) ?? "0", 10);
+  const isNewBest = state.score > stored;
+
+  if (isNewBest) {
+    localStorage.setItem(HIGH_SCORE_KEY, String(state.score));
   }
 
-  if (finalScore >= 8) {
-    return "Strong result. You handled this round with real confidence.";
-  }
+  const highScore = isNewBest ? state.score : stored;
 
-  if (finalScore >= 5) {
-    return "Solid effort. Another round should push you even higher.";
+  if (highScore > 0) {
+    ui.resultsHighScore.textContent = isNewBest
+      ? `New personal best: ${highScore} / ${QUIZ_LENGTH}`
+      : `Personal best: ${highScore} / ${QUIZ_LENGTH}`;
+    ui.resultsHighScore.className = `results-high-score${isNewBest ? " results-high-score--new" : ""}`;
+  } else {
+    ui.resultsHighScore.textContent = "";
+    ui.resultsHighScore.className = "results-high-score";
   }
-
-  return "Good start. Try another round and build momentum.";
 }
 
 function showScreen(targetScreen) {
@@ -207,42 +192,4 @@ function showScreen(targetScreen) {
   });
 
   screens[targetScreen].classList.add("screen--active");
-}
-
-function shuffle(items) {
-  for (let index = items.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [items[index], items[randomIndex]] = [items[randomIndex], items[index]];
-  }
-
-  return items;
-}
-
-const VALID_CATEGORIES = new Set(["Science", "Technology", "Engineering", "Math"]);
-
-function isValidQuestion(q) {
-  return (
-    q !== null &&
-    typeof q === "object" &&
-    typeof q.question === "string" &&
-    q.question.trim().length > 0 &&
-    VALID_CATEGORIES.has(q.category) &&
-    Array.isArray(q.options) &&
-    q.options.length >= 2 &&
-    Number.isInteger(q.correct_answer_index) &&
-    q.correct_answer_index >= 0 &&
-    q.correct_answer_index < q.options.length
-  );
-}
-
-function prepareQuestion(question) {
-  const answers = question.options.map((option, index) => ({
-    text: option,
-    isCorrect: index === question.correct_answer_index,
-  }));
-
-  return {
-    ...question,
-    answers: shuffle(answers),
-  };
 }
