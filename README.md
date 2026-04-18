@@ -4,11 +4,11 @@ Interactive STEM quiz built with `HTML`, `CSS3`, and vanilla `JavaScript`.
 
 The app shows:
 - a landing page
-- a 10-question randomized quiz
+- a 10-question category-balanced quiz
 - shuffled answer order for each question
 - live score and progress tracking
 - instant feedback after each answer
-- a replayable results screen
+- a replayable results screen with personal best tracking
 
 ## Getting Started
 
@@ -16,14 +16,12 @@ The app shows:
 
 ```bash
 git clone <your-repository-url>
-cd quiz-game
+cd stem-quiz
 ```
 
 ### 2. Run it through a local server
 
-This project loads `questions.json` with `fetch()`, so it should not be opened directly with `file://`.
-
-One simple option:
+This project loads `questions.json` with `fetch()`, so it must not be opened directly with `file://`.
 
 ```bash
 python3 -m http.server
@@ -38,27 +36,29 @@ http://localhost:8000
 ## Project Structure
 
 ```text
-quiz-game/
-├── index.html
-├── style.css
-├── script.js
-├── questions.json
+stem-quiz/
+├── index.html        — markup and screen layout
+├── style.css         — all visual styling and responsive breakpoints
+├── lib.js            — pure logic (shuffle, validation, question selection)
+├── script.js         — DOM-facing quiz behaviour and localStorage
+├── questions.json    — question bank (100 questions)
+├── validate.js       — CLI validator for questions.json
+├── test.js           — unit test suite
 └── README.md
 ```
 
 ## How the Quiz Works
 
-- The app loads all questions from `questions.json`
-- It randomly selects `10` questions at the start of each run
+- All questions are loaded from `questions.json` at the start of the first round
+- Every question is validated on load; the quiz refuses to start if any question is malformed
+- 10 questions are selected each round with proportional representation across all four STEM categories (2–3 questions per category)
 - Each selected question has its answer options shuffled before display
-- The app keeps track of score, progress, and final results in the browser only
-- No backend or database is required
+- Score, progress, and results are tracked in the browser only — no backend required
+- The best score across all rounds is saved to `localStorage` and shown on the results screen
 
 ## Required JSON Structure
 
-The app expects `questions.json` to contain a JSON array of question objects.
-
-Each question must use this exact structure:
+`questions.json` must be a valid JSON array. Each question must use this structure:
 
 ```json
 {
@@ -70,63 +70,32 @@ Each question must use this exact structure:
 }
 ```
 
-### Field Requirements
+### Field requirements
 
-- `id`
-  - Type: number
-  - Should be unique for each question
+| Field | Type | Rules |
+|---|---|---|
+| `id` | number | Must be unique across all questions |
+| `category` | string | Must be one of: `Science`, `Technology`, `Engineering`, `Math` |
+| `question` | string | Must be non-empty |
+| `options` | array of strings | Must contain at least 2 items |
+| `correct_answer_index` | integer | Must be a valid zero-based index into `options` |
 
-- `category`
-  - Type: string
-  - Used for display in the quiz header
-  - Example values in this project: `Science`, `Technology`, `Engineering`, `Math`
+## Validating questions.json
 
-- `question`
-  - Type: string
-  - The text shown in the question area
+Run the validator before editing the question bank or after adding new questions:
 
-- `options`
-  - Type: array of strings
-  - Must contain exactly `4` answer options
-  - Each item should be plain text
+```bash
+node validate.js
+```
 
-- `correct_answer_index`
-  - Type: number
-  - Must be a valid zero-based index pointing to the correct item inside `options`
-  - Valid values are `0`, `1`, `2`, or `3`
+A passing run prints the total question count and a category breakdown. Any schema errors are listed with their question ID and a description of the problem. The script exits with code `1` on failure, making it safe to use in CI.
 
-## JSON Rules the App Depends On
+## Running the Tests
 
-To work correctly with the current implementation:
+The test suite covers all pure functions in `lib.js`. Requires Node 18 or later.
 
-- `questions.json` must be a valid JSON array
-- the file must contain at least `10` questions
-- every question must include all 5 required fields
-- every question must have exactly `4` options
-- `correct_answer_index` must match the correct answer in `options`
-- all user-facing text should be in English if you want the app language to stay consistent
-
-If any of these rules are broken, the app may fail to load the quiz or show incorrect answer behavior.
-
-## Example Question Set Snippet
-
-```json
-[
-  {
-    "id": 1,
-    "category": "Science",
-    "question": "What gas do plants absorb from the atmosphere for photosynthesis?",
-    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-    "correct_answer_index": 2
-  },
-  {
-    "id": 2,
-    "category": "Math",
-    "question": "What is 7 raised to the power of 3?",
-    "options": ["21", "49", "343", "512"],
-    "correct_answer_index": 2
-  }
-]
+```bash
+node test.js
 ```
 
 ## Customizing the Quiz
@@ -134,14 +103,15 @@ If any of these rules are broken, the app may fail to load the quiz or show inco
 To add or replace questions:
 
 1. Open `questions.json`
-2. Add new question objects using the same structure
-3. Keep exactly 4 options per question
-4. Make sure `correct_answer_index` points to the correct answer
-5. Save the file and refresh the browser
+2. Add new question objects following the structure above
+3. Run `node validate.js` to confirm the file is valid
+4. Refresh the browser
+
+To change the number of questions per round, update `QUIZ_LENGTH` in `lib.js`. The category-balancing logic adapts automatically.
 
 ## Notes
 
-- The quiz length is currently fixed to `10` questions in `script.js`
-- The app is fully client-side
-- Styling and layout are defined in `style.css`
-- Quiz behavior and data loading are handled in `script.js`
+- The app is fully client-side with no build step required
+- Pure functions (shuffle, question selection, validation, scoring messages) live in `lib.js` and are shared by the browser and the Node.js test runner
+- DOM behaviour and `localStorage` access are handled in `script.js`
+- Styling and responsive layout are defined in `style.css`
