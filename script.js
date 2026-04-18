@@ -21,11 +21,13 @@ const ui = {
   resultsMessage: document.getElementById("results-message"),
 };
 
-let questionBank = [];
-let activeQuestions = [];
-let currentQuestionIndex = 0;
-let score = 0;
-let hasAnsweredCurrentQuestion = false;
+const state = {
+  questionBank: [],
+  activeQuestions: [],
+  currentQuestionIndex: 0,
+  score: 0,
+  hasAnswered: false,
+};
 
 ui.startButton.addEventListener("click", startQuiz);
 ui.nextButton.addEventListener("click", goToNextQuestion);
@@ -36,16 +38,14 @@ async function startQuiz() {
   ui.restartButton.disabled = true;
 
   try {
-    if (questionBank.length === 0) {
-      questionBank = await loadQuestions();
+    if (state.questionBank.length === 0) {
+      state.questionBank = await loadQuestions();
     }
 
-    activeQuestions = shuffle([...questionBank])
-      .slice(0, QUIZ_LENGTH)
-      .map(prepareQuestion);
-    currentQuestionIndex = 0;
-    score = 0;
-    hasAnsweredCurrentQuestion = false;
+    state.activeQuestions = selectQuestions(state.questionBank).map(prepareQuestion);
+    state.currentQuestionIndex = 0;
+    state.score = 0;
+    state.hasAnswered = false;
 
     showScreen("quiz");
     renderQuestion();
@@ -82,14 +82,35 @@ async function loadQuestions() {
   return questions;
 }
 
-function renderQuestion() {
-  const question = activeQuestions[currentQuestionIndex];
+// Picks QUIZ_LENGTH questions with proportional representation from each category.
+function selectQuestions(bank) {
+  const byCategory = {};
+  for (const question of bank) {
+    (byCategory[question.category] ??= []).push(question);
+  }
 
-  hasAnsweredCurrentQuestion = false;
+  const categories = Object.keys(byCategory);
+  const base = Math.floor(QUIZ_LENGTH / categories.length);
+  const remainder = QUIZ_LENGTH % categories.length;
+
+  const selected = [];
+  categories.forEach((category, index) => {
+    const count = base + (index < remainder ? 1 : 0);
+    const pool = shuffle([...byCategory[category]]);
+    selected.push(...pool.slice(0, count));
+  });
+
+  return shuffle(selected);
+}
+
+function renderQuestion() {
+  const question = state.activeQuestions[state.currentQuestionIndex];
+
+  state.hasAnswered = false;
   ui.category.textContent = question.category;
-  ui.questionCount.textContent = `Question ${currentQuestionIndex + 1} of ${QUIZ_LENGTH}`;
-  ui.scoreDisplay.textContent = `Score: ${score}`;
-  ui.progressFill.style.width = `${(currentQuestionIndex / QUIZ_LENGTH) * 100}%`;
+  ui.questionCount.textContent = `Question ${state.currentQuestionIndex + 1} of ${QUIZ_LENGTH}`;
+  ui.scoreDisplay.textContent = `Score: ${state.score}`;
+  ui.progressFill.style.width = `${(state.currentQuestionIndex / QUIZ_LENGTH) * 100}%`;
   ui.questionText.textContent = question.question;
   ui.feedbackMessage.textContent = "";
   ui.feedbackMessage.className = "feedback-message";
@@ -107,17 +128,17 @@ function renderQuestion() {
 }
 
 function handleAnswer(selectedIndex) {
-  if (hasAnsweredCurrentQuestion) {
+  if (state.hasAnswered) {
     return;
   }
 
-  hasAnsweredCurrentQuestion = true;
-  const question = activeQuestions[currentQuestionIndex];
+  state.hasAnswered = true;
+  const question = state.activeQuestions[state.currentQuestionIndex];
   const answerButtons = [...ui.answerGrid.querySelectorAll(".answer-button")];
   const isCorrect = question.answers[selectedIndex].isCorrect;
 
   if (isCorrect) {
-    score += 1;
+    state.score += 1;
     ui.feedbackMessage.textContent = "Correct. Nice work.";
     ui.feedbackMessage.classList.add("is-correct");
   } else {
@@ -125,7 +146,7 @@ function handleAnswer(selectedIndex) {
     ui.feedbackMessage.classList.add("is-wrong");
   }
 
-  ui.scoreDisplay.textContent = `Score: ${score}`;
+  ui.scoreDisplay.textContent = `Score: ${state.score}`;
 
   answerButtons.forEach((button, index) => {
     button.disabled = true;
@@ -139,29 +160,29 @@ function handleAnswer(selectedIndex) {
     }
   });
 
-  ui.nextButton.textContent = currentQuestionIndex === QUIZ_LENGTH - 1 ? "See Results" : "Next Question";
+  ui.nextButton.textContent = state.currentQuestionIndex === QUIZ_LENGTH - 1 ? "See Results" : "Next Question";
   ui.nextButton.classList.remove("hidden");
-  ui.progressFill.style.width = `${((currentQuestionIndex + 1) / QUIZ_LENGTH) * 100}%`;
+  ui.progressFill.style.width = `${((state.currentQuestionIndex + 1) / QUIZ_LENGTH) * 100}%`;
 }
 
 function goToNextQuestion() {
-  if (!hasAnsweredCurrentQuestion) {
+  if (!state.hasAnswered) {
     return;
   }
 
-  if (currentQuestionIndex === QUIZ_LENGTH - 1) {
+  if (state.currentQuestionIndex === QUIZ_LENGTH - 1) {
     renderResults();
     return;
   }
 
-  currentQuestionIndex += 1;
+  state.currentQuestionIndex += 1;
   renderQuestion();
 }
 
 function renderResults() {
   showScreen("results");
-  ui.resultsScore.textContent = `${score} / ${QUIZ_LENGTH}`;
-  ui.resultsMessage.textContent = getResultsMessage(score);
+  ui.resultsScore.textContent = `${state.score} / ${QUIZ_LENGTH}`;
+  ui.resultsMessage.textContent = getResultsMessage(state.score);
 }
 
 function getResultsMessage(finalScore) {
