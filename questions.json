@@ -1,0 +1,867 @@
+[
+  {
+    "id": 1,
+    "category": "Science",
+    "question": "Which element has the chemical symbol 'O'?",
+    "options": ["Gold", "Oxygen", "Osmium", "Silver"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 2,
+    "category": "Technology",
+    "question": "In web browsing, what does URL stand for?",
+    "options": [
+      "Universal Resource Locator",
+      "Uniform Resource Locator",
+      "United Radio Link",
+      "User Remote Line"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 3,
+    "category": "Engineering",
+    "question": "Which type of bridge uses cables suspended from towers to support the deck?",
+    "options": [
+      "Arch Bridge",
+      "Beam Bridge",
+      "Suspension Bridge",
+      "Truss Bridge"
+    ],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 4,
+    "category": "Math",
+    "question": "What is the value of pi (π) rounded to two decimal places?",
+    "options": ["3.12", "3.14", "3.16", "3.18"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 5,
+    "category": "Science",
+    "question": "Which planet is known as the 'Red Planet'?",
+    "options": ["Venus", "Jupiter", "Mars", "Saturn"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 6,
+    "category": "Technology",
+    "question": "Who is commonly credited with co-founding Microsoft with Bill Gates?",
+    "options": ["Steve Jobs", "Paul Allen", "Mark Zuckerberg", "Larry Page"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 7,
+    "category": "Engineering",
+    "question": "What unit is used to measure electrical resistance?",
+    "options": ["Volt", "Ampere", "Watt", "Ohm"],
+    "correct_answer_index": 3
+  },
+  {
+    "id": 8,
+    "category": "Math",
+    "question": "In a right-angled triangle, what is the name of the side opposite the right angle?",
+    "options": ["Adjacent", "Hypotenuse", "Opposite", "Radius"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 9,
+    "category": "Science",
+    "question": "What is the hardest natural substance on Earth?",
+    "options": ["Gold", "Iron", "Diamond", "Quartz"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 10,
+    "category": "Technology",
+    "question": "In computing, what does RAM stand for?",
+    "options": [
+      "Read Access Memory",
+      "Random Access Memory",
+      "Rapid Analysis Module",
+      "Run Access Mode"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 11,
+    "category": "Engineering",
+    "question": "Which law of motion states that for every action, there is an equal and opposite reaction?",
+    "options": [
+      "Newton's First Law",
+      "Newton's Second Law",
+      "Newton's Third Law",
+      "Law of Gravity"
+    ],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 12,
+    "category": "Math",
+    "question": "What is the square root of 144?",
+    "options": ["10", "11", "12", "14"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 13,
+    "category": "Science",
+    "question": "What gas do plants absorb from the atmosphere for photosynthesis?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 14,
+    "category": "Technology",
+    "question": "Which programming language is primarily used for Android app development?",
+    "options": ["Swift", "Kotlin", "C#", "PHP"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 15,
+    "category": "Engineering",
+    "question": "What is the primary material used to make most modern solar panels?",
+    "options": ["Copper", "Silicon", "Aluminum", "Silver"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 16,
+    "category": "Math",
+    "question": "What is 7 raised to the power of 3?",
+    "options": ["21", "49", "343", "512"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 17,
+    "category": "Science",
+    "question": "Which part of the human brain is responsible for balance and coordination?",
+    "options": ["Cerebrum", "Cerebellum", "Brainstem", "Thalamus"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 18,
+    "category": "Technology",
+    "question": "What does 'HTTP' stand for?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "High Tech Transfer Process",
+      "Hyperlink Text Terminal Point",
+      "Home Tool Transfer Program"
+    ],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 19,
+    "category": "Engineering",
+    "question": "Which inventor and engineer is best known for work on alternating current (AC) electricity?",
+    "options": [
+      "Thomas Edison",
+      "Nikola Tesla",
+      "Alexander Graham Bell",
+      "James Watt"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 20,
+    "category": "Math",
+    "question": "If a circle has a radius of 5, what is its diameter?",
+    "options": ["2.5", "5", "10", "25"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 21,
+    "category": "Science",
+    "question": "Which blood vessel carries oxygen-rich blood from the lungs back to the heart?",
+    "options": ["Aorta", "Pulmonary vein", "Vena cava", "Pulmonary artery"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 22,
+    "category": "Technology",
+    "question": "Which networking device usually assigns local IP addresses on a home network?",
+    "options": ["Router", "Monitor", "Printer", "Webcam"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 23,
+    "category": "Engineering",
+    "question": "What is the main purpose of gears in a machine?",
+    "options": [
+      "To store electricity",
+      "To transfer motion and force",
+      "To cool the engine",
+      "To measure pressure"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 24,
+    "category": "Math",
+    "question": "A jacket costs $80 and is discounted by 15%. What is its sale price?",
+    "options": ["$64", "$68", "$72", "$74"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 25,
+    "category": "Science",
+    "question": "What is the process by which liquid water becomes water vapor?",
+    "options": ["Condensation", "Freezing", "Evaporation", "Melting"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 26,
+    "category": "Technology",
+    "question": "Which company originally developed the Java programming language?",
+    "options": ["Sun Microsystems", "Adobe", "IBM", "Nintendo"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 27,
+    "category": "Engineering",
+    "question": "Which force keeps an airplane in the sky by pushing it upward?",
+    "options": ["Drag", "Lift", "Friction", "Weight"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 28,
+    "category": "Math",
+    "question": "Solve for x: 3x + 5 = 20",
+    "options": ["3", "4", "5", "6"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 29,
+    "category": "Science",
+    "question": "Which blood cells help fight infections?",
+    "options": ["Red blood cells", "White blood cells", "Platelets", "Plasma"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 30,
+    "category": "Technology",
+    "question": "In computing, what does CPU stand for?",
+    "options": [
+      "Central Process Unit",
+      "Computer Power Unit",
+      "Central Processing Unit",
+      "Core Program Utility"
+    ],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 31,
+    "category": "Engineering",
+    "question": "Which simple machine is a sloped surface used to raise objects?",
+    "options": ["Lever", "Pulley", "Inclined Plane", "Wheel and Axle"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 32,
+    "category": "Math",
+    "question": "What is the area of a rectangle that is 8 units long and 5 units wide?",
+    "options": ["13", "26", "40", "80"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 33,
+    "category": "Science",
+    "question": "Which part of a cell contains the genetic material in most organisms?",
+    "options": ["Cell membrane", "Nucleus", "Cytoplasm", "Ribosome"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 34,
+    "category": "Technology",
+    "question": "Which HTML tag is typically used for the main top-level heading on a web page?",
+    "options": ["<head>", "<h1>", "<p>", "<section>"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 35,
+    "category": "Engineering",
+    "question": "Why do engineers often use triangles in bridge frameworks?",
+    "options": [
+      "Triangles change shape easily under load",
+      "Triangles are structurally rigid",
+      "Triangles always reduce the total weight to zero",
+      "Triangles block wind completely"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 36,
+    "category": "Math",
+    "question": "What is the value of 9 squared?",
+    "options": ["18", "27", "72", "81"],
+    "correct_answer_index": 3
+  },
+  {
+    "id": 37,
+    "category": "Science",
+    "question": "Which planet has the most well-known ring system?",
+    "options": ["Earth", "Mars", "Saturn", "Mercury"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 38,
+    "category": "Technology",
+    "question": "What type of technology uses fingerprints or face scans for identification?",
+    "options": ["Blockchain", "Biometrics", "Virtual Reality", "Caching"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 39,
+    "category": "Engineering",
+    "question": "Which material is known for being both strong and lightweight in many aircraft parts?",
+    "options": ["Concrete", "Titanium", "Wood", "Glass"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 40,
+    "category": "Math",
+    "question": "What is the median of the numbers 3, 5, 7, 9, 11?",
+    "options": ["5", "7", "8", "9"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 41,
+    "category": "Science",
+    "question": "A solution with a pH of 3 would be described as:",
+    "options": ["Neutral", "Acidic", "Basic", "Radioactive"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 42,
+    "category": "Technology",
+    "question": "In computing, what does AI stand for?",
+    "options": ["Automatic Input", "Artificial Intelligence", "Applied Internet", "Analog Interface"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 43,
+    "category": "Engineering",
+    "question": "In an engineered system, a feedback loop is mainly used to:",
+    "options": [
+      "Eliminate all sensors",
+      "Adjust output based on measured results",
+      "Increase randomness in the system",
+      "Replace the power source"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 44,
+    "category": "Math",
+    "question": "What is the diagonal of a square with side length 5?",
+    "options": ["5√2", "10", "25", "5/2"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 45,
+    "category": "Science",
+    "question": "Which vitamin is mainly produced in the skin when exposed to sunlight?",
+    "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 46,
+    "category": "Technology",
+    "question": "Which programming concept repeats a set of instructions while a condition is met?",
+    "options": ["Loop", "Variable", "Comment", "Array"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 47,
+    "category": "Engineering",
+    "question": "In a building, what is the main role of insulation material?",
+    "options": [
+      "To increase heat transfer",
+      "To reduce heat transfer",
+      "To generate electricity",
+      "To absorb sound only"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 48,
+    "category": "Math",
+    "question": "What is 0.75 written as a fraction in simplest form?",
+    "options": ["1/2", "2/3", "3/4", "4/5"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 49,
+    "category": "Science",
+    "question": "What happens to light when it travels from air into glass?",
+    "options": ["It increases", "It decreases", "It becomes zero", "It doubles"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 50,
+    "category": "Technology",
+    "question": "Which data structure stores items in key-value pairs?",
+    "options": ["Array", "Dictionary", "Loop", "String"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 51,
+    "category": "Engineering",
+    "question": "What is the purpose of a circuit breaker in an electrical system?",
+    "options": [
+      "To amplify voltage",
+      "To stop current during overloads",
+      "To store charge permanently",
+      "To cool electrical wires"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 52,
+    "category": "Math",
+    "question": "If y = 2x and x = 6, what is the value of y?",
+    "options": ["8", "10", "12", "14"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 53,
+    "category": "Science",
+    "question": "Which layer of Earth lies beneath the crust and contains hot, slowly flowing rock?",
+    "options": ["Inner core", "Mantle", "Outer core", "Troposphere"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 54,
+    "category": "Technology",
+    "question": "What is the main purpose of DNS on the internet?",
+    "options": [
+      "To compress image files",
+      "To translate domain names into IP addresses",
+      "To charge wireless devices",
+      "To block all pop-up windows"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 55,
+    "category": "Engineering",
+    "question": "Which renewable energy source uses moving air to generate electricity?",
+    "options": ["Geothermal", "Wind", "Biomass", "Tidal"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 56,
+    "category": "Math",
+    "question": "What is the sum of the interior angles of a triangle?",
+    "options": ["90 degrees", "180 degrees", "270 degrees", "360 degrees"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 57,
+    "category": "Science",
+    "question": "Which organ filters blood and helps remove waste from the body?",
+    "options": ["Stomach", "Kidney", "Pancreas", "Spleen"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 58,
+    "category": "Technology",
+    "question": "Which statement best describes cloud storage?",
+    "options": [
+      "Files can only be accessed on one computer",
+      "Files are stored on remote servers and accessed over the internet",
+      "It works only without a network connection",
+      "It permanently deletes previous file versions"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 59,
+    "category": "Engineering",
+    "question": "Why do engineers add supports to long beams in structures?",
+    "options": [
+      "To increase bending and sagging",
+      "To reduce stress and deflection",
+      "To make calculations impossible",
+      "To remove all compression forces"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 60,
+    "category": "Math",
+    "question": "A bag contains 3 red, 2 blue, and 5 green marbles. What is the probability of drawing a blue marble?",
+    "options": ["1/10", "1/5", "2/5", "1/2"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 61,
+    "category": "Science",
+    "question": "How is the Milky Way most commonly classified?",
+    "options": ["Elliptical galaxy", "Irregular galaxy", "Spiral galaxy", "Ring galaxy"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 62,
+    "category": "Technology",
+    "question": "Which device is most likely to use an IP address to communicate over the internet?",
+    "options": ["A notebook page", "A wireless speaker connected by Bluetooth only", "A smartphone on Wi-Fi", "A printed poster"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 63,
+    "category": "Engineering",
+    "question": "Why are trusses commonly used in bridges and roofs?",
+    "options": [
+      "They make structures heavier",
+      "They spread loads efficiently",
+      "They block radio signals",
+      "They store water"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 64,
+    "category": "Math",
+    "question": "Which expression is equivalent to 2(x + 3) - x?",
+    "options": ["x + 3", "x + 6", "2x + 3", "3x + 6"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 65,
+    "category": "Science",
+    "question": "If an object is moving at constant speed in a straight line, what can be concluded about the net force acting on it?",
+    "options": ["The net force is zero", "The net force is increasing", "The net force equals its mass", "The net force points backward"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 66,
+    "category": "Technology",
+    "question": "Which term describes a malicious program designed to damage or disrupt a computer?",
+    "options": ["Plugin", "Malware", "Driver", "Firewall"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 67,
+    "category": "Engineering",
+    "question": "Which engineering field focuses on designing systems to reduce pollution and protect ecosystems?",
+    "options": ["Aerospace Engineering", "Environmental Engineering", "Nuclear Engineering", "Textile Engineering"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 68,
+    "category": "Math",
+    "question": "Solve the system: x + y = 10 and x - y = 4. What is x?",
+    "options": ["3", "6", "7", "14"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 69,
+    "category": "Science",
+    "question": "When the temperature of a gas in a sealed container increases, what generally happens to its pressure?",
+    "options": ["It decreases", "It stays the same", "It increases", "It becomes negative"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 70,
+    "category": "Technology",
+    "question": "What is the main difference between RAM and long-term storage such as an SSD?",
+    "options": [
+      "RAM keeps data when the power is off, but SSDs do not",
+      "RAM is temporary memory, while SSDs store data even when power is off",
+      "RAM is only used for images, while SSDs are only used for text",
+      "There is no difference"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 71,
+    "category": "Engineering",
+    "question": "What does tensile strength measure?",
+    "options": [
+      "How well a material resists being stretched",
+      "How fast a material melts",
+      "How bright a material reflects light",
+      "How much sound a material absorbs"
+    ],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 72,
+    "category": "Math",
+    "question": "What is the slope of the line through the points (2, 5) and (6, 13)?",
+    "options": ["2", "3", "4", "8"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 73,
+    "category": "Science",
+    "question": "Why are metals such as copper good electrical conductors?",
+    "options": [
+      "Their atoms cannot vibrate",
+      "They contain free-moving electrons",
+      "They have no protons",
+      "They are always magnetic"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 74,
+    "category": "Technology",
+    "question": "What is a main advantage of using functions in programming?",
+    "options": [
+      "They make code impossible to debug",
+      "They help reuse logic and organize code",
+      "They automatically remove all errors",
+      "They can only be used once in a program"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 75,
+    "category": "Engineering",
+    "question": "What is the main role of a prototype in engineering design?",
+    "options": [
+      "To sell the final product immediately",
+      "To test and improve an idea",
+      "To increase manufacturing costs",
+      "To replace blueprints forever"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 76,
+    "category": "Math",
+    "question": "What is the area of a circle with radius 6 in terms of pi?",
+    "options": ["6π", "12π", "18π", "36π"],
+    "correct_answer_index": 3
+  },
+  {
+    "id": 77,
+    "category": "Science",
+    "question": "During photosynthesis, plants use light energy to convert carbon dioxide and water into glucose and:",
+    "options": ["Nitrogen", "Oxygen", "Calcium", "Methane"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 78,
+    "category": "Technology",
+    "question": "Which situation is the best example of encryption?",
+    "options": [
+      "Compressing a file to make it smaller",
+      "Converting readable data into coded form for security",
+      "Copying a file to a USB drive",
+      "Changing a file name"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 79,
+    "category": "Engineering",
+    "question": "Why is concrete often reinforced with steel in large structures?",
+    "options": [
+      "Steel improves concrete's strength under tension",
+      "Steel makes concrete lighter than air",
+      "Steel prevents concrete from ever cracking",
+      "Steel turns concrete into an insulator"
+    ],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 80,
+    "category": "Math",
+    "question": "If the ratio of boys to girls in a club is 3:5 and there are 24 members in total, how many girls are there?",
+    "options": ["9", "12", "15", "18"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 81,
+    "category": "Science",
+    "question": "Which electromagnetic wave has a shorter wavelength than visible light?",
+    "options": ["Radio waves", "Microwaves", "Infrared", "Ultraviolet"],
+    "correct_answer_index": 3
+  },
+  {
+    "id": 82,
+    "category": "Technology",
+    "question": "If a video call keeps freezing because the connection cannot carry data quickly enough, which issue is the most likely cause?",
+    "options": ["Low bandwidth", "High screen brightness", "Too much local storage", "Incorrect keyboard layout"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 83,
+    "category": "Engineering",
+    "question": "Why do engineers test multiple design iterations before final production?",
+    "options": [
+      "To avoid learning from failures",
+      "To compare performance and improve the design",
+      "To make the final product less reliable",
+      "To remove the need for measurements"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 84,
+    "category": "Math",
+    "question": "What is the value of 2^-3?",
+    "options": ["-8", "1/8", "4", "8"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 85,
+    "category": "Science",
+    "question": "What determines an element's identity in the periodic table?",
+    "options": [
+      "The number of neutrons only",
+      "The number of protons in the nucleus",
+      "The total mass of the sample",
+      "The color of the element"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 86,
+    "category": "Technology",
+    "question": "Why is two-factor authentication more secure than a password alone?",
+    "options": [
+      "It removes the need to remember any password",
+      "It requires a second form of verification in addition to the password",
+      "It guarantees a device can never be hacked",
+      "It hides the screen brightness settings"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 87,
+    "category": "Engineering",
+    "question": "In a gear system, what usually happens when a small gear drives a much larger gear?",
+    "options": [
+      "Output speed increases and torque decreases",
+      "Output speed decreases and torque increases",
+      "Both speed and torque increase equally",
+      "The direction of rotation disappears"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 88,
+    "category": "Math",
+    "question": "The points (1, 2), (2, 4), (3, 6), and (4, 8) all lie on which equation?",
+    "options": ["y = x + 1", "y = 2x", "y = x^2", "y = 2x + 1"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 89,
+    "category": "Science",
+    "question": "If one parent is heterozygous Aa and the other is homozygous recessive aa, what fraction of their offspring are expected to show the recessive genotype?",
+    "options": ["0%", "25%", "50%", "100%"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 90,
+    "category": "Technology",
+    "question": "Which statement best explains the difference between the internet and the World Wide Web?",
+    "options": [
+      "They are exactly the same thing",
+      "The internet is the global network, while the web is a service that runs on it",
+      "The web is hardware, while the internet is software only",
+      "The internet works only inside schools, while the web is public"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 91,
+    "category": "Engineering",
+    "question": "What is the main engineering advantage of an arch in a bridge or doorway?",
+    "options": [
+      "It converts loads into compressive forces",
+      "It eliminates the need for foundations",
+      "It stores electrical energy",
+      "It makes all materials waterproof"
+    ],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 92,
+    "category": "Math",
+    "question": "Which equation represents a line with slope 2 and y-intercept -3?",
+    "options": ["y = 2x - 3", "y = -3x + 2", "y = 2x + 3", "y = 3x - 2"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 93,
+    "category": "Science",
+    "question": "Which change is a chemical change rather than a physical change?",
+    "options": ["Ice melting", "Salt dissolving in water", "Iron rusting", "Paper being torn"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 94,
+    "category": "Technology",
+    "question": "Which statement about open-source software is correct?",
+    "options": [
+      "Its source code is available for others to inspect and modify",
+      "It can only be used by governments",
+      "It must always cost money",
+      "It cannot be shared online"
+    ],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 95,
+    "category": "Engineering",
+    "question": "If a machine uses less input force by increasing the distance over which the force is applied, which engineering concept does this demonstrate?",
+    "options": ["Mechanical advantage", "Radioactivity", "Thermal expansion", "Digital compression"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 96,
+    "category": "Math",
+    "question": "What is the volume of a rectangular prism with length 4, width 3, and height 5?",
+    "options": ["12", "20", "60", "75"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 97,
+    "category": "Science",
+    "question": "In ecosystems, what is the main role of decomposers such as fungi and many bacteria?",
+    "options": [
+      "To produce sunlight",
+      "To break down dead material and recycle nutrients",
+      "To compete with all producers for light",
+      "To prevent all food chains from forming"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 98,
+    "category": "Technology",
+    "question": "What is the main purpose of a version control system such as Git?",
+    "options": [
+      "To increase monitor resolution",
+      "To track changes to files and coordinate work",
+      "To replace all programming languages",
+      "To physically repair storage drives"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 99,
+    "category": "Engineering",
+    "question": "Why do engineers include safety factors in their designs?",
+    "options": [
+      "To make structures fail earlier",
+      "To allow for uncertainties and unexpected loads",
+      "To remove the need for testing",
+      "To guarantee zero material cost"
+    ],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 100,
+    "category": "Math",
+    "question": "A right triangle has legs of length 6 and 8. What is the length of the hypotenuse?",
+    "options": ["10", "12", "14", "16"],
+    "correct_answer_index": 0
+  }
+]

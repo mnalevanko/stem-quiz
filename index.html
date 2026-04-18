@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEM Sprint Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <main class="app-card">
+      <section class="screen screen--active" id="landing-screen" aria-labelledby="landing-title">
+        <div class="landing-backdrop" aria-hidden="true"></div>
+        <div class="hero">
+          <p class="eyebrow">Adaptive STEM Challenge</p>
+          <h1 id="landing-title">Think like a scientist. Answer like an engineer.</h1>
+          <p class="hero-copy">
+            Step into a fast, visual STEM drill with randomized questions, live scoring,
+            and immediate answer feedback designed to keep you sharp.
+          </p>
+          <div class="hero-actions">
+            <button class="button button--primary" id="start-button" type="button">Launch Quiz</button>
+            <p class="hero-note">10 questions per round. Fresh answer order every time.</p>
+          </div>
+          <div class="hero-metrics" aria-label="Quiz features">
+            <article class="metric-card">
+              <strong>10</strong>
+              <span>random questions each run</span>
+            </article>
+            <article class="metric-card">
+              <strong>4</strong>
+              <span>STEM categories in the mix</span>
+            </article>
+            <article class="metric-card">
+              <strong>Live</strong>
+              <span>progress and score tracking</span>
+            </article>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <article class="feature-frame feature-frame--main">
+            <p class="feature-label">Mission Control</p>
+            <h2>Measure reasoning, not answer position memory.</h2>
+            <p>
+              Each question reshuffles its options, so correct choices move every round.
+            </p>
+          </article>
+          <article class="feature-frame feature-frame--glass">
+            <p class="feature-label">Inside the round</p>
+            <ul class="feature-list">
+              <li>Instant correct or incorrect reveal</li>
+              <li>Visible question progress from start to finish</li>
+              <li>Fast replay with a newly shuffled set</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen" id="quiz-screen" aria-live="polite">
+        <header class="quiz-header">
+          <div class="quiz-title-block">
+            <p class="eyebrow" id="question-category">Category</p>
+            <h2 class="quiz-title">STEM Sprint in Progress</h2>
+            <p class="question-count" id="question-count">Question 1 of 10</p>
+          </div>
+          <div class="quiz-status">
+            <div class="status-chip">
+              <span class="status-chip__label">Current Score</span>
+              <div class="score-pill" id="score-display">Score: 0</div>
+            </div>
+          </div>
+        </header>
+
+        <div class="progress-block" aria-label="Quiz progress">
+          <div class="progress-meta">
+            <span>Round Progress</span>
+            <span>Question Flow</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar__fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <article class="question-card">
+          <div class="question-prompt">
+            <h2 id="question-text">Question text</h2>
+          </div>
+          <div class="answer-grid" id="answer-grid"></div>
+        </article>
+
+        <div class="feedback-row">
+          <p class="feedback-message" id="feedback-message"></p>
+          <button class="button button--secondary hidden" id="next-button" type="button">Next Question</button>
+        </div>
+      </section>
+
+      <section class="screen" id="results-screen" aria-labelledby="results-title">
+        <div class="results-card">
+          <p class="eyebrow">Round Complete</p>
+          <h2 id="results-title">You finished the STEM Sprint.</h2>
+          <p class="results-score" id="results-score">8 / 10</p>
+          <p class="results-message" id="results-message"></p>
+          <div class="results-grid" aria-hidden="true">
+            <article class="results-stat">
+              <strong>10</strong>
+              <span>questions completed</span>
+            </article>
+            <article class="results-stat">
+              <strong>Live</strong>
+              <span>feedback applied instantly</span>
+            </article>
+          </div>
+          <div class="results-actions">
+            <button class="button button--primary" id="restart-button" type="button">Play Again</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
