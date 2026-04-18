@@ -522,6 +522,18 @@ h1 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 253, 0.98));
 }
 
+.results-high-score {
+  margin: 10px 0 0;
+  font-size: 0.94rem;
+  color: var(--muted);
+  min-height: 1.4em;
+}
+
+.results-high-score--new {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
 .results-actions {
   margin-top: 34px;
   padding-top: 10px;
